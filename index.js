@@ -1,7 +1,7 @@
 let opcion = 0;
-while (opcion != 4) {
-    let prestamo = 0;
-    let nuevoprestamo = 0;
+let prestamo = 0;
+let nuevoprestamo = 0;
+while (opcion != 4) {   
     alert("Bienvenido al sistema de Creditos Amapola. Por favor ingrese la opcion deseada.");
     opcion = parseInt(prompt("1. Solicitar prestamo\n" + "2.Estado actual\n" + "3.Pagar Prestamo\n" + "4.Salir"));
 
@@ -48,16 +48,15 @@ function imprimirPrestamo(prestamo){
     alert("Su saldo a deber es ...$" + prestamo);
 
 }
-function montoAPagar(prestamo) {
-    {
-        let pago = prompt("Ingrese el monto que desee pagar...");
+function montoAPagar() {
+    let pago=100000
+    while (pago>prestamo){
+     pago = parseInt(prompt("Ingrese el monto que desee pagar..."));
         if (pago > prestamo) {
             alert("INGRESO MAS DINERO DEL QUE DEBIA, POR FAVOR INGRESE NUEVAMENTE");
-        }
-    } while (pago > prestamo);
-
-    prestamo == prestamo - pago;
-    alert("Su saldo actual es... $" + prestamo);
+        }else{ prestamo = prestamo - pago;
+            alert("Su saldo actual es... $" + prestamo)}; }
+    
     
 }
 
