@@ -1,9 +1,31 @@
-function Persona(nombre,edad,direccion){
+
+class Item{
+constructor(id,tipo,nombre,imagen,descripcion,precio,cantidad,disponibilidad){
+this.id=id;
+this.tipo=tipo;
 this.nombre=nombre;
-this.edad=edad;
-this.direccion=direccion;
+this.imagen=imagen;
+this.descripcion=descripcion;
+this.precio=precio;
+this.cantidad=cantidad;
+this.disponibilidad=disponibilidad;
+}
+darDeBaja(){
+    this.cantidad=false;
+}
+cambiarImagen(imagen){
+    this.imagen=imagen;
+}
+cambiarDescripcion(descripcion){
+    this.descripcion=descripcion;
 
 }
+cambiarPrecio(precio){
+    this.precio=precio;
+}
 
-const persona1= new Persona("andres",50,"AV.");
-console.log (persona1);
+
+
+
+}
+    
