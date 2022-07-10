@@ -61,7 +61,7 @@
     padding: 0px;
     background-image: radial-gradient(circle, #b1170994, #93160f, #761511, #591410, #3d110d);
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     width: 100%;
     height: 20%;
     position: flex;
@@ -118,6 +118,7 @@
     width: 100%;
     justify-content: center;
     transition: all 3s;
+    font-family: 'Arima', cursive;
 }
 
 .titulos {
@@ -139,4 +140,22 @@
     font-family: 'Unna', serif;
     color: #ffbe0b;
     width: 100%;
+}
+.galeria{
+    display: flex;
+    margin: 12%;
+    margin-top: 2%;
+    flex-wrap: wrap;
+    justify-content:space-between;
+   }
+
+
+@media screen and (max-width: 1145px) {
+
+    .p1{
+        font-size: 90%;
+    }
+    .navHeader{
+        flex-wrap: wrap;
+    }
 }
