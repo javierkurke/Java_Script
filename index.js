@@ -221,7 +221,7 @@ return resultado2;
 function modificarElemento(nuevoElemento) {
     let i = items.indexOf(nuevoElemento.id)
     if (i==-1) {
-        alert("Elemento no encontrado");
+       
         }else{
     items[i] = nuevoElemento;}
 
