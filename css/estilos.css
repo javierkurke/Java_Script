@@ -7,7 +7,7 @@
 }
 
 .bodycontacto {
-  
+
     background-image: url("../assets/img/fondo\ grande\ contacto.jpg");
     background-size: cover;
     background-color: rgba(0, 0, 0, 0.855);
@@ -24,8 +24,10 @@
     border-style: double;
     border-width: 0.3cm;
 }
-*{
-    margin-top: 0%;}
+
+* {
+    margin-top: 0%;
+}
 
 
 .header {
@@ -141,21 +143,101 @@
     color: #ffbe0b;
     width: 100%;
 }
-.galeria{
+
+.galeria {
     display: flex;
     margin: 12%;
     margin-top: 2%;
     flex-wrap: wrap;
-    justify-content:space-between;
-   }
+    justify-content: space-between;
+}
+
+.formulario {
+    display: flex;
+    justify-content: center;
+    
+    
 
 
+}
+
+
+.formulario_texto {
+    
+    background-color: #fffbfb;
+    border: #5560fa solid;
+    width: 50px;
+    height: 60px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+font-size: 30px;
+text-align: center;
+}
+
+.formulario_boton {
+    margin: 2%;
+
+
+}
+
+.carrito {
+    
+    position: fixed;
+    display: flex;
+    margin-left: 5%;
+    width: 80%;
+    height: 12%;
+    
+    border-radius: 15%;
+   
+   justify-content: right;
+   align-items: center;
+    transition: ease 0.3s;
+   
+}
+.carrito_boton{
+    position: relative;
+    background-color: #9b0606f8;
+    margin-bottom: 6%;
+    border: solid 2px #000000;
+    border-radius: 55%;
+    padding: 1%;
+    transition: all 1s;
+    justify-content: center;
+    align-items: center;
+
+   
+    
+}
+    .carrito_boton:hover{
+        background-color: rgb(201, 15, 15);
+    color: #000000;
+    font-size: 120%;
+    }
+.p15{
+    position: absolute;
+    background-color: yellow;
+    border: solid black;
+    border-radius: 60%;
+    height: 50%;
+    width: 50%;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    
+    font-size: 120%;
+}
+.p16{
+    
+    text-align: center;
+
+
+}
 @media screen and (max-width: 1145px) {
 
-    .p1{
+    .p1 {
         font-size: 90%;
     }
-    .navHeader{
+
+    .navHeader {
         flex-wrap: wrap;
     }
 }
