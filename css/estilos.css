@@ -188,7 +188,7 @@
     height: 22%;
     justify-self: right;
     border-radius: 15%;
-
+    bottom: 10%;
     justify-content: right;
     align-items: center;
     transition: ease 0.3s;
@@ -204,8 +204,8 @@
     transition: all 1s;
     justify-content: center;
     align-items: center;
-
-    margin-bottom: 100%;
+    
+   margin-bottom: 100%;
 
 }
 
@@ -224,6 +224,26 @@
    justify-content: space-around;
     background-color: #504f4f7c;
     border:solid black;
+    
+
+}
+.carrito_contenido_padre{
+    display: flex;
+    flex-direction: column;
+    background-color: #990303b2;
+    
+    
+
+}
+.carrito_contenido_padre::-webkit-scrollbar{
+   width: 7px; 
+     
+     
+ 
+ }
+.carrito_contenido_padre::-webkit-scrollbar-thumb{
+   background-color: #00397a; 
+    
     
 
 }
