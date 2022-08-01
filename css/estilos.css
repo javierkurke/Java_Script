@@ -227,8 +227,16 @@
     
 
 }
-.carrito_contenido_padre{
+.carrito_contenido_padre2{
     display: flex;
+    flex-direction: column;
+    background-color: #990303b2;
+    
+    
+
+}
+.carrito_contenido_padre{
+    display: none;
     flex-direction: column;
     background-color: #990303b2;
     
