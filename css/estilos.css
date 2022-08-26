@@ -142,6 +142,7 @@
     font-family: 'Unna', serif;
     color: #ffbe0b;
     width: 100%;
+    height: 100%;
 }
 
 .galeria {
@@ -219,18 +220,24 @@
     display:flex;
     flex-direction: row;
     align-items: center;
-   margin: 2%;
+    justify-self: center;
    color: white;
    justify-content: space-around;
-    background-color: #504f4f7c;
+    background-color: #00b10f36;
     border:solid black;
+    height: auto;
+    width: auto;
     
 
 }
 .carrito_contenido_padre2{
-    display: flex;
-    flex-direction: column;
-    background-color: #990303b2;
+    display: flex;  
+       flex-direction: column;
+    background-color: #00000093;
+   overflow: auto;
+   width: auto;
+ padding: 1%;
+   height: 30vh;
     
     
 
@@ -274,6 +281,48 @@ padding: 1%;
 
 
 }
+.precio_final{
+    
+    background-color: #363636;
+    border: solid rgb(255, 255, 255);
+    border-style: dashed ;
+    color: rgb(175, 0, 0);
+   margin-left: 5%;
+    list-style: none;
+    font-size: 130%;
+    width: 30%;
+    text-align: center;
+    border-radius: 8%;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+   
+    
+}
+.botones_enviarylimpiar{
+    margin-right: 2%;
+
+
+
+
+}
+.botton_elementos{
+  height: 40%;
+margin: 2%;
+width: 35%;
+  padding: 1%;
+   align-items: center;
+   display:flex;
+    flex-direction: row;    
+    justify-content: center;
+   border: solid rgb(233, 190, 0) ;
+    background-color: #010102;
+    align-self: flex-end;
+    
+ 
+}
+.botton_elementos1{
+  display: none;  
+  }
 
 
 
@@ -315,4 +364,7 @@ padding: 1%;
     .carrito {
         top: 60%;
     }
+}
+.invisible{
+    display: none;
 }
