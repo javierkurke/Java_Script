@@ -66,13 +66,25 @@ function cargarProductos() {
 
 }
 let total = 0;
+const carrito = [];
 const productos = [];
-const carrito = JSON.parse(sessionStorage.getItem("carrito")) || [];
-const guardarStorage = (clave, valor) => { sessionStorage.setItem(clave, valor) }
-let traerStorage = JSON.stringify(sessionStorage.getItem(`nombre`));
-let ArrayDelStorage = [];
-ArrayDelStorage = traerStorage;
+const ArrayDelStorage=[];
+function BuscarSessionStorage() {      
+for (let index = 0; index < sessionStorage.length; index++) {
+    const almacenados=JSON.parse(sessionStorage.getItem(`${index+1}`));    
+    if (parseInt(almacenados?.id)) {
+                carrito.push((almacenados));
+                
+            
+            }    
+    
+} 
+cargarSessionStorage();
 
+}
+
+const guardarStorage = (clave, valor) => { sessionStorage.setItem(clave, valor) }
+BuscarSessionStorage();
 cargarProductos();
 
 let botoncarrito = document.getElementById("boton_carrito");
@@ -85,7 +97,67 @@ function aparece() {
         carrito1.setAttribute("class", `carrito_contenido_padre`);
     }
 }
+function cargarSessionStorage(){
+    let a0 = document.getElementById("a0");
+    a0.innerHTML = parseInt(carrito.length);  
+    for (let i= 0; i < carrito.length; i++) {
+      
+       
+        let parrafo = document.createElement("div");
+        parrafo.classList.add("carrito_contenido");
+        parrafo.setAttribute("id", `${carrito[i].id}`)
+        parrafo.innerHTML =
+            `   
+        <li class="item_contenido">${carrito[i].tipo}: ${carrito[i].nombre}</li>
+        <li class="item_contenido">Cantidad: ${carrito[i].cantidad}</li>
+        <li class="item_contenido">Precio:$${carrito[i].precio2}</li>
+        <button id="e${carrito[i].id}" class="boton_eliminar" type="button"><lord-icon
+            src="https://cdn.lordicon.com/rivoakkk.json"
+            trigger="hover"
+            colors="primary:#ffffff,secondary:#c71f16"
+            style="width:50px;height:50px">
+        </lord-icon></button>`;
 
+        document.getElementById("carrito").append(parrafo);
+
+        buscaryEliminarTotal();
+        AgregarTotal();
+        let e1 = document.getElementById(`e${carrito[i].id}`);
+        e1.addEventListener("click", eliminar);
+        function eliminar() {
+            var2 = carrito.indexOf(carrito[i]);           
+            parrafo.remove();            
+            
+           
+          
+            sessionStorage.removeItem(parseInt(carrito[i].id));
+            Toastify({
+                style: {
+                    border: "solid #ffd900af",
+                    background: "rgba(0, 0, 0, 0.527)",
+                  },
+                text: `Se Elimino el Elemento: ${carrito[i].nombre}`,
+                offset: {
+                    eg: '2em', 
+                  eg: '2em' 
+                },
+              }).showToast();
+             carrito.splice(var2, 1);
+             buscaryEliminarTotal();
+             AgregarTotal();
+             let a0 = document.getElementById("a0");
+            a0.innerHTML = parseInt(carrito.length);
+            
+            
+
+              
+
+                     
+            
+
+        }
+    }
+}
 for (const iterator of productos) {
 
     let a1 = document.getElementById(`${iterator.id}1`);
@@ -175,6 +247,11 @@ for (const iterator of productos) {
 
         }
     }
+   
+
+
+
+
     function cargarCarrito() {
         for (let index = carrito.length - 1; index < carrito.length; index++) {
 
@@ -306,6 +383,7 @@ function limpiarCarrito() {
                         var5.remove();
                     }
                 }
+                sessionStorage.clear();
                 carrito.splice(0, carrito.length);
                 let a0 = document.getElementById("a0");
                 a0.innerHTML = parseInt(carrito.length);
@@ -372,20 +450,18 @@ function EnviarPedido() {
 
                 )
                 limpiarCarritoDespuesDeEnviar();
+                sessionStorage.clear();
             }
         })
 
     }
 }
 function CarritoVacio(){
-    if (carrito.length==0) {
+    if (carrito.length==0 ) {
         let invisible=document.getElementById("carrito");
         invisible.setAttribute("class","carrito_contenido_padre");
         
         
-    }else{
-        let visible=document.getElementById("carrito_contenido_padre");
-        visible.setAttribute("class","carrito_contenido_padre2");
     }
 
 
